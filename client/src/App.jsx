@@ -1,7 +1,12 @@
 import "./App.css";
+import TransactionTable from "./components/local/transaction-table";
 
 function App() {
-    return <></>;
+    return (
+        <>
+            <TransactionTable />
+        </>
+    );
 }
 
 export default App;
