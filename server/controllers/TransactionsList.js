@@ -3,10 +3,12 @@ const TransactionModel = require("../models/Transactions");
 
 const listAllTransactions = async (req, res) => {
     try {
-        const { search = "", limit = 10, page = 1 } = req.query;
+        const { search = "", limit = 10, page = 1, month } = req.query;
+        const monthNumber = parseInt(month);
         let filter = {};
         if (search) {
             filter = {
+                $match: { $expr: { $eq: [{ $month: "$dateOfSale" }, monthNumber] } },
                 $or: [
                     { title: { $regex: search, $options: "i" } },
                     { description: { $regex: search, $options: "i" } },
@@ -15,7 +17,7 @@ const listAllTransactions = async (req, res) => {
             };
         }
 
-        const transactions = await TransactionModel.find(filter)
+        const transactions = await TransactionModel.aggregate(filter)
             .limit(limit)
             .skip((parseInt(page) - 1) * parseInt(limit));
         res.json(transactions);
@@ -41,9 +43,9 @@ const getProductStats = async (req, res) => {
         ]);
 
         res.json({
-            amount: result.totalAmount.length > 0 ? result.totalAmount[0].amount : 0,
-            soldItems: result.soldItems.length > 0 ? result.soldItems[0].totalSold : 0,
-            unsoldItems: result.unsoldItems.length > 0 ? result.unsoldItems[0].totalUnsold : 0,
+            amount: result[0].totalAmount[0].amount,
+            soldItems: result[0].soldItems[0].totalSold,
+            unsoldItems: result[0].unsoldItems[0].totalUnsold,
         });
     } catch (error) {
         res.json({ message: "Error fetching statastics" });
