@@ -57,6 +57,8 @@ The project is divided into the following directories:
 
 ## 🚀 Technologies Used
 
+-   **React.js** - For frontend
+-   **Tailwind CSS** - For styling
 -   **Node.js** - Backend runtime environment
 -   **Express.js** - Web framework for Node.js
 -   **MongoDB** - NoSQL database
