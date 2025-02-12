@@ -4,6 +4,7 @@
 
 The project is divided into the following directories:
 
+-   **client/**: Contains frontend code
 -   **server/**: Contains the backend API developed with **Node.js and Express**.
 -   **models/**: Defines MongoDB schemas for products and transactions.
 -   **routes/**: Manages API endpoints for product data and statistics.
@@ -30,10 +31,20 @@ The project is divided into the following directories:
     cd product-management-mern
     ```
 2. Install dependencies:
+
     ```bash
+    cd client/
     npm install
     ```
-3. Create a `.env` file in the root directory and add:
+
+    and
+
+    ```bash
+    cd server/
+    npm install
+    ```
+
+3. Create a `.env` file in the `server` directory and add:
     ```env
     DB_URI=your_mongodb_connection_string
     ```
