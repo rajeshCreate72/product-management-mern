@@ -48,9 +48,9 @@ The project is divided into the following directories:
     ```env
     DB_URI=your_mongodb_connection_string
     ```
-4. Start the server:
+4. Start the `server` and `client` by running:
     ```bash
-    npm start
+    npm run dev
     ```
 
 ---
