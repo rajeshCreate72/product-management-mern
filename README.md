@@ -14,11 +14,11 @@ The project is divided into the following directories:
 
 ## 🛠️ API Endpoints
 
--   **\`GET /basic-api/initialize-database\`** → Initializes the database with sample data.
--   **\`GET /basic-api/list-transactions\`** → Fetches all product transactions.
--   **\`GET /basic-api/statistics\`** → Retrieves product statistics.
--   **\`GET /basic-api/bar-data\`** → Provides data for bar graph visualization.
--   **\`GET /basic-api/pie-chart\`** → Returns data for pie chart visualization.
+-   **\`GET /api/initialize-database\`** → Initializes the database with sample data.
+-   **\`GET /api/list-transactions\`** → Fetches all product transactions.
+-   **\`GET /api/statistics\`** → Retrieves product statistics.
+-   **\`GET /api/bar-data\`** → Provides data for bar graph visualization.
+-   **\`GET /api/pie-chart\`** → Returns data for pie chart visualization.
 
 ---
 
